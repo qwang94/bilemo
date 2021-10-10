@@ -20,7 +20,12 @@ git clone lienHTTPS
 
 7.Faites enfin "composer install" dans votre ligne de commande pour installer toutes les dépendances
 
-8.Mainteant le projet devrait être correctement installé sur votre machine, vous pouvez consulter le site web en faisant un "symfony serve" ou "php bin/console server:start" pour lancer le projet.
+8.Vous devez également créer une base de donnée en faisant la commande suivante:
+symfony console doctrine:database:create
+ou bien 
+php bin/console doctrine:database:create
 
-9.Pour tester l'api, il vous suffit de télécharger un logiciel type Postman, puis aller ouvrir les fichiers de documentation technique de l'API pour voir les différentes méthodes que vous pouvez utiliser pour vous servir de l'API.
+9.Mainteant le projet devrait être correctement installé sur votre machine, vous pouvez consulter le site web en faisant un "symfony serve" ou "php bin/console server:start" pour lancer le projet.
+
+10.Pour tester l'api, il vous suffit de télécharger un logiciel type Postman, puis aller ouvrir les fichiers de documentation technique de l'API pour voir les différentes méthodes que vous pouvez utiliser pour vous servir de l'API.
 
