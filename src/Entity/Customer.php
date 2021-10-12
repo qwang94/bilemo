@@ -7,10 +7,13 @@ use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\CustomerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
- * @ApiResource
+ * @ApiResource(
+ *      paginationItemsPerPage=5,
+ * )
  * @ApiFilter(SearchFilter::class, properties={"user": "exact"})
  */
 class Customer
@@ -24,21 +27,29 @@ class Customer
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le nom du client ne peut pas être vide")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L'email du client ne peut pas être vide")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="L'adresse du client ne peut pas être vide")
+     * @Assert\Type(
+     *      type="integer",
+     *      message="Le téléphone du client doit être composé de plusieurs nombres"
+     * )
      */
     private $address;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank(message="Le téléphone du client ne peut pas être vide")
      */
     private $phone;
 

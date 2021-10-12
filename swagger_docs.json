@@ -1,9 +1,9 @@
 {
     "openapi": "3.0.3",
     "info": {
-        "title": "",
-        "description": "",
-        "version": "0.0.0"
+        "title": "BileMo",
+        "description": "A bilemo product API",
+        "version": "1.0.0"
     },
     "servers": [
         {
