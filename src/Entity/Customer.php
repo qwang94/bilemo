@@ -40,16 +40,16 @@ class Customer
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="L'adresse du client ne peut pas être vide")
-     * @Assert\Type(
-     *      type="integer",
-     *      message="Le téléphone du client doit être composé de plusieurs nombres"
-     * )
      */
     private $address;
 
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(message="Le téléphone du client ne peut pas être vide")
+     * @Assert\Type(
+     *      type="integer",
+     *      message="Le téléphone du client doit être composé de plusieurs nombres"
+     * )
      */
     private $phone;
 
